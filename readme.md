@@ -3,7 +3,6 @@ Calc is a prototype of a calculator with basic algebraic simplification written 
 
 # Screenshot
 ![Calc Screenshot](/screenshot.png)
-Format: ![Screenshot](url)
 
 # Features
 * Basic algebraic simplification (e.g. x+x = 2*x)
@@ -18,12 +17,10 @@ Format: ![Screenshot](url)
 
 # Basic architecture
 1. Decide (regex) the input type (base conversion or mathematical term) (relay)
-
-  Base Conversion
+Base Conversion
 2. Do base conversion (relay)
 3. Show result
-
-  Algebraic simplification
+Algebraic simplification
 2. Convert the input term into an Abstract Syntax Tree (shuntingyard)
 3. Evaluate the AST (eval)
 4. Show the result
