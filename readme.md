@@ -17,9 +17,11 @@ Calc is a prototype of a calculator with basic algebraic simplification written 
 
 # Basic architecture
 1. Decide (regex) the input type (base conversion or mathematical term) (relay)
+
 Base Conversion
 2. Do base conversion (relay)
 3. Show result
+
 Algebraic simplification
 2. Convert the input term into an Abstract Syntax Tree (shuntingyard)
 3. Evaluate the AST (eval)
