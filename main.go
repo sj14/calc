@@ -5,6 +5,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 	"strings"
 
 	"github.com/sj14/calc/relay"
@@ -55,7 +56,13 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	port := os.Getenv("PORT")
+
+	if port == "" {
+		log.Println("$PORT not set in environment, using 8080")
+		port = "8080"
+	}
 	http.HandleFunc("/", indexHandler)
 	http.Handle("/bootstrap/", http.StripPrefix("/bootstrap/", http.FileServer(http.Dir("web/bootstrap"))))
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
